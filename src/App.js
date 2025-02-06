@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+//import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   let textMode = "dark";
   let textColor = "black";
@@ -53,29 +53,44 @@ function App() {
     }
   };
   return (
+
     <>
-    <Router>
-        <Navbar
+     <Navbar
           title="Text Utils"
           mode={mode}
           toggleMode={toggleMode}
           toggleGreenMode={toggleGreenMode}
         />
         <Alert alert={alert}></Alert>
-        <Routes>
-        <Route path="/about" element={<About mode={mode} textMode={textMode}/>}></Route>
-          <Route path="/" element={<TextForm
+        <TextForm
               heading="Enter the text to analyz"
-              mode={mode}
-              textMode={textMode}
-              textColor={textColor}
-              showAlert={showAlert}
-            />}>
+               mode={mode}
+               textMode={textMode}
+               textColor={textColor}
+               showAlert={showAlert}
+             />
+        </>
+    // <Router>
+    //     <Navbar
+    //       title="Text Utils"
+    //       mode={mode}
+    //       toggleMode={toggleMode}
+    //       toggleGreenMode={toggleGreenMode}
+    //     />
+    //     <Alert alert={alert}></Alert>
+    //     <Routes>
+    //     <Route path="/about" element={<About mode={mode} textMode={textMode}/>}></Route>
+    //       <Route path="/" element={<TextForm
+    //           heading="Enter the text to analyz"
+    //           mode={mode}
+    //           textMode={textMode}
+    //           textColor={textColor}
+    //           showAlert={showAlert}
+    //         />}>
             
-          </Route>
-        </Routes>
-        </Router>
-    </>
+    //       </Route>
+    //     </Routes>
+    //     </Router>
   );
 }
 
